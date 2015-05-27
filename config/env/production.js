@@ -1,5 +1,5 @@
-'use strict';
 
+var rootUrl = window.location.origin;
 module.exports = {
 	db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/secret-octo-avenger',
 	assets: {
@@ -36,7 +36,7 @@ module.exports = {
 	google: {
 		clientID: process.env.GOOGLE_ID || 'APP_ID',
 		clientSecret: process.env.GOOGLE_SECRET || 'APP_SECRET',
-		callbackURL: window.location.origin + '/auth/google/callback'
+		callbackURL: rootUrl + '/auth/google/callback'
 	},
 	linkedin: {
 		clientID: process.env.LINKEDIN_ID || 'APP_ID',
